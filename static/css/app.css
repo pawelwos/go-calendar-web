@@ -583,12 +583,28 @@ video {
   margin-right: auto;
 }
 
+.flex {
+  display: flex;
+}
+
 .table {
   display: table;
 }
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .py-16 {
@@ -598,6 +614,15 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 td {

@@ -8,24 +8,31 @@
 </head>
 <body class="">
     <div class="container mx-auto text-center py-16">
-        <table class="w-1/2 mx-auto">
-            <tr>
-                {{range .thead }}
-                    <th>{{.}}</th>
-                {{end}}
-            </tr>
-            {{range .tbody}}
+        <div class="w-1/2 mx-auto text-center">
+            <h2 class="text-xl font-bold">{{ .year }}</h2>
+            <table class="w-full">
                 <tr>
-                    {{range . }}
-                        {{if ne . 0 }}
-                        <td>{{.}}</td>
-                        {{else}}
-                        <td>&nbsp;</td>
-                        {{end}}
+                    {{range .thead }}
+                        <th>{{.}}</th>
                     {{end}}
                 </tr>
-            {{end}}
-        </table>
+                {{range .tbody}}
+                    <tr>
+                        {{range . }}
+                            {{if ne . 0 }}
+                            <td>{{.}}</td>
+                            {{else}}
+                            <td>&nbsp;</td>
+                            {{end}}
+                        {{end}}
+                    </tr>
+                {{end}}
+            </table>
+            <div class="flex justify-between">
+                <a href="/{{ subDate .year .month }}">&lt; PREV</a>
+                <a href="/{{ addDate .year .month }}">NEXT &gt;</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
